@@ -44,4 +44,39 @@ class Task
     {
         return $this->id;
     }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function getDueDate(): ?\DateTimeInterface
+    {
+        return $this->dueDate;
+    }
+
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function setTitle(?string $title): void
+    {
+        $this->title = $title;
+    }
+
+    public function setDescription(?string $description): void
+    {
+        $this->description = $description;
+    }
+
+    public function setDueDate(?\DateTimeInterface $dueDate): void
+    {
+        $this->dueDate = $dueDate;
+    }
 }
