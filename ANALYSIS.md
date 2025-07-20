@@ -29,5 +29,6 @@
 
 ## Difficultés identifiées
 Pendant l’analyse du projet, plusieurs difficultés techniques ont été identifiées concernant la mise en place des tests :
-
-Solutions apportées :
+- Absence de certains getters et setters dans les entités : Certaines propriétés des entités, comme User, ne disposaient pas de tous les accesseurs nécessaires, ce qui a bloqué certains tests (ex. : getEmail() ou getPassword() manquants). Il a fallu compléter les entités manuellement pour permettre la lecture ou la modification des données pendant les tests.
+- Configuration de l’environnement de test : L’activation d’une base de données dédiée pour les tests (.env.test) et la gestion du schéma (doctrine:schema:update) ont été essentielles, mais non intuitives au départ. J’ai mis en place par la suite une base de données pour l’environnement de test.
+- Tests d’intégration avec Doctrine : Lors des tests du TaskRepository, la contrainte de relations entre entités a généré des erreurs SQL lors de la suppression des données. Il a fallu adapter la stratégie de nettoyage pour préserver l’intégrité référentielle.
