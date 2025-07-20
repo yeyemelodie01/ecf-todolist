@@ -30,9 +30,4 @@
 ## Difficultés identifiées
 Pendant l’analyse du projet, plusieurs difficultés techniques ont été identifiées concernant la mise en place des tests :
 
-- Certaines classes, comme TaskService RegistrationController, dépendent de services du framework Symfony comme EntityManagerInterface. Il a donc fallu utiliser des mocks natifs pour isoler ces dépendances et garantir que les tests restent unitaires.
-- Pour les tests d’intégration, notamment ceux des repositories et contrôleurs, il a été nécessaire de prévoir un environnement de test distinct, avec une configuration adaptée (.env.test) et une base de données dédiée. Cela demande un peu plus de configuration avant d’exécuter les tests.
-
 Solutions apportées :
-- J’ai décidé de m’appuyer uniquement sur les mocks fournis par PHPUnit.
-- J’ai défini une priorité pour chaque fichier afin de concentrer mes efforts sur les classes à fort impact fonctionnel.
